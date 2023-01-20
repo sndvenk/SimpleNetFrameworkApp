@@ -33,7 +33,7 @@ jobs:
     - name: Execute Powershell script to evaluate results
       shell: pwsh
       run: |
-        .\Evaluator.ps1      
+        ./.github/workflows/Evaluator.ps1      
     - name: Archive upgrade-analyis results
       uses: actions/upload-artifact@v3
       with:
