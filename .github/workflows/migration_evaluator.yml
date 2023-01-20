@@ -4,8 +4,6 @@
 name: Evaluate Portability to .Net Core
 
 on:
-  push:
-    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
 
