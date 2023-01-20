@@ -10,10 +10,10 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
 
+  job_1:
+    name: BootStrap - compatability Evaluator
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -24,12 +24,15 @@ jobs:
       run: dotnet tool install -g --add-source https://api.nuget.org/v3/index.json --ignore-failed-sources upgrade-assistant       
     - name: Install JQ
       run: chocolatey install jq -y
+
+  job_2:
+    name: Execute Upgrade-assistant
+    runs-on: windows-latest
+    steps:
     - name: Evaluate Upgrade-assistant
       run: upgrade-assistant.exe analyze .\SimpleFrameworkApp.sln -t LTS
     - name: Extract evaluation results
       run: jq '[.runs[].results[] | select(.locations[].physicalLocation.region.startLine != null) | {ruleId:.ruleId,message:.message.text, filePath:.locations[].physicalLocation.artifactLocation.uri,lineNumber:.locations[].physicalLocation.region.startLine}]' .\AnalysisReport.sarif > .\new_baseline.json
-    - name: Compare
-      run: git diff --no-index ./.github/workflows/current_baseline.json ./new_baseline.json
     - name: Execute Powershell script to evaluate results
       shell: pwsh
       run: |
