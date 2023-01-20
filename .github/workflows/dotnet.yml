@@ -24,12 +24,6 @@ jobs:
       run: dotnet tool install -g --add-source https://api.nuget.org/v3/index.json --ignore-failed-sources upgrade-assistant       
     - name: Install JQ
       run: chocolatey install jq -y
-
-  job_2:
-    name: Execute Upgrade-assistant
-    needs: job_1
-    runs-on: windows-latest
-    steps:
     - name: Evaluate Upgrade-assistant
       run: upgrade-assistant.exe analyze .\SimpleFrameworkApp.sln -t LTS
     - name: Extract evaluation results
