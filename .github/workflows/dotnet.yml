@@ -27,6 +27,7 @@ jobs:
 
   job_2:
     name: Execute Upgrade-assistant
+    needs: job_1
     runs-on: windows-latest
     steps:
     - name: Evaluate Upgrade-assistant
