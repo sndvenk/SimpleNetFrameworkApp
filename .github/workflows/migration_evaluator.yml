@@ -28,12 +28,12 @@ jobs:
       run: upgrade-assistant.exe analyze .\SimpleFrameworkApp.sln -t LTS
     - name: Extract evaluation results
       run: jq '[.runs[].results[] | select(.locations[].physicalLocation.region.startLine != null) | {ruleId:.ruleId,message:.message.text, filePath:.locations[].physicalLocation.artifactLocation.uri,lineNumber:.locations[].physicalLocation.region.startLine}]' .\AnalysisReport.sarif > .\new_baseline.json
-    - name: Execute Powershell script to evaluate results
-      shell: pwsh
-      run: |
-        ./.github/workflows/Evaluator.ps1      
     - name: Archive upgrade-analyis results
       uses: actions/upload-artifact@v3
       with:
         name: ua-analyze-report
         path: ./new_baseline.json        
+    - name: Execute Powershell script to evaluate results
+      shell: pwsh
+      run: |
+        ./.github/workflows/Evaluator.ps1      
