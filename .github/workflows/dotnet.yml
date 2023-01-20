@@ -28,3 +28,13 @@ jobs:
       run: upgrade-assistant.exe analyze .\SimpleFrameworkApp.sln -t LTS
     - name: Extract evaluation results
       run: jq '[.runs[].results[] | select(.locations[].physicalLocation.region.startLine != null) | {ruleId:.ruleId,message:.message.text, filePath:.locations[].physicalLocation.artifactLocation.uri,lineNumber:.locations[].physicalLocation.region.startLine}]' .\AnalysisReport.sarif > .\current_baseline.json
+    - name: Archive upgrade-analyis results
+        uses: actions/upload-artifact@v3
+        with:
+          name: ua-analyze-report
+          path: ./current_baseline.json
+   - name: Download a single artifact
+       uses: actions/download-artifact@v3
+       with:
+          name: ./current_baseline.json
+          
