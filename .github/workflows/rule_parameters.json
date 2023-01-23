@@ -5,7 +5,7 @@
     "ruleType": "APICompatability",
     "ruleParameter": "HttpContext does not have a Current",
     "ruleCondition": "UA0005",
-    "isEnabled": true
+    "isEnabled": false
 
   },
   {
@@ -23,7 +23,7 @@
     "ruleType": "APICompatability",
     "ruleParameter": "Script and style bundling works differently in ASP.NET Core",
     "ruleCondition": "UA0013_C",
-    "isEnabled": false
+    "isEnabled": true
 
   }
 
