@@ -1,0 +1,8 @@
+[
+  {
+    "ruleId": "UA0013_C",
+    "message": "Script and style bundling works differently in ASP.NET Core. BundleCollection should be replaced by alternative bundling technologies. https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification",
+    "filePath": "file:///D:/a/SimpleNetFrameworkApp/SimpleNetFrameworkApp/App_Start/BundleConfig.cs",
+    "lineNumber": 9
+  }
+]

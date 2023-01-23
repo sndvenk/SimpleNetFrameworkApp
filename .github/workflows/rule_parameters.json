@@ -1,0 +1,30 @@
+[
+  {
+    "runnerType": "UA",
+    "ruleName": "HttpContext",
+    "ruleType": "APICompatability",
+    "ruleParameter": "HttpContext does not have a Current",
+    "ruleCondition": "UA0005",
+    "isEnabled": false
+
+  },
+  {
+    "runnerType": "UA",
+    "ruleName": "TypeUpgrade",
+    "ruleType": "APICompatability",
+    "ruleParameter": "Types should be upgraded",
+    "ruleCondition": "UA0002",
+    "isEnabled": true
+
+  },
+  {
+    "runnerType": "UA",
+    "ruleName": "BundleCollection",
+    "ruleType": "APICompatability",
+    "ruleParameter": "Script and style bundling works differently in ASP.NET Core",
+    "ruleCondition": "UA0013_C",
+    "isEnabled": true
+
+  }
+
+]

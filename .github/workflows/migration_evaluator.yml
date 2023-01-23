@@ -4,16 +4,14 @@
 name: Evaluate Portability to .Net Core
 
 on:
-  push:
-    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
 
 jobs:
-  build:
 
+  job_1:
+    name: Ratchet Evaluator
     runs-on: windows-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -26,5 +24,16 @@ jobs:
       run: chocolatey install jq -y
     - name: Evaluate Upgrade-assistant
       run: upgrade-assistant.exe analyze .\SimpleFrameworkApp.sln -t LTS
-    - name: Extract evaluation results
-      run: jq '[.runs[].results[] | select(.locations[].physicalLocation.region.startLine != null) | {ruleId:.ruleId,message:.message.text, filePath:.locations[].physicalLocation.artifactLocation.uri,lineNumber:.locations[].physicalLocation.region.startLine}]' .\AnalysisReport.sarif > .\current_baseline.json
+    - name: Execute Powershell script to group the rules
+      shell: pwsh
+      run: |
+        ./.github/workflows/extractCodeHealth.ps1       
+    - name: Archive upgrade-analyis results
+      uses: actions/upload-artifact@v3
+      with:
+        name: ua-analyze-report
+        path: ./*.json        
+    - name: Execute Powershell script to evaluate results
+      shell: pwsh
+      run: |
+        ./.github/workflows/evaluateCodeHealth.ps1      
