@@ -1,0 +1,44 @@
+[
+  {
+    "ruleId": "UA0002",
+    "message": "Type 'Controller' should be replaced with 'Microsoft.AspNetCore.Mvc.Controller'",
+    "filePath": "file:///D:/a/SimpleNetFrameworkApp/SimpleNetFrameworkApp/Controllers/HomeController.cs",
+    "lineNumber": 9
+  },
+  {
+    "ruleId": "UA0002",
+    "message": "Type 'ActionResult' should be replaced with 'Microsoft.AspNetCore.Mvc.ActionResult'",
+    "filePath": "file:///D:/a/SimpleNetFrameworkApp/SimpleNetFrameworkApp/Controllers/HomeController.cs",
+    "lineNumber": 11
+  },
+  {
+    "ruleId": "UA0002",
+    "message": "Type 'ActionResult' should be replaced with 'Microsoft.AspNetCore.Mvc.ActionResult'",
+    "filePath": "file:///D:/a/SimpleNetFrameworkApp/SimpleNetFrameworkApp/Controllers/HomeController.cs",
+    "lineNumber": 16
+  },
+  {
+    "ruleId": "UA0002",
+    "message": "Type 'ActionResult' should be replaced with 'Microsoft.AspNetCore.Mvc.ActionResult'",
+    "filePath": "file:///D:/a/SimpleNetFrameworkApp/SimpleNetFrameworkApp/Controllers/HomeController.cs",
+    "lineNumber": 23
+  },
+  {
+    "ruleId": "UA0002",
+    "message": "Type 'ActionResult' should be replaced with 'Microsoft.AspNetCore.Mvc.ActionResult'",
+    "filePath": "file:///D:/a/SimpleNetFrameworkApp/SimpleNetFrameworkApp/Controllers/HomeController.cs",
+    "lineNumber": 30
+  },
+  {
+    "ruleId": "UA0002",
+    "message": "Type 'ActionResult' should be replaced with 'Microsoft.AspNetCore.Mvc.ActionResult'",
+    "filePath": "file:///D:/a/SimpleNetFrameworkApp/SimpleNetFrameworkApp/Controllers/HomeController.cs",
+    "lineNumber": 35
+  },
+  {
+    "ruleId": "UA0002",
+    "message": "Type 'ActionResult' should be replaced with 'Microsoft.AspNetCore.Mvc.ActionResult'",
+    "filePath": "file:///D:/a/SimpleNetFrameworkApp/SimpleNetFrameworkApp/Controllers/HomeController.cs",
+    "lineNumber": 42
+  }
+]
