@@ -39,6 +39,12 @@ namespace SimpleFrameworkApp.Controllers
             return View();
         }
 
+        public ActionResult Design()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
         public ActionResult ContactCopy()
         {
             ViewBag.Message = "Your contact page.";
